@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import { createAuth } from '../packages';
+import { createAuth } from 'easy-v-auth';
 import { createPinia } from 'pinia';
 import { useStore } from './state';
 

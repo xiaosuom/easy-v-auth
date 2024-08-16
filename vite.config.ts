@@ -1,15 +1,16 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import dts from 'vite-plugin-dts';
 
 export default defineConfig({
-	plugins: [vue()],
+	plugins: [vue(), dts()],
 	build: {
 		outDir: 'dist',
 		lib: {
 			entry: resolve(__dirname, 'packages/index.ts'),
-			name: 'easy-upload-vue',
-			fileName: (format) => `easy-upload-vue.${format}.js`,
+			name: 'easy-v-auth',
+			fileName: (format) => `easy-v-auth.${format}.js`,
 		},
 		rollupOptions: {
 			external: ['vue'],
