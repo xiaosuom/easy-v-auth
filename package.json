@@ -1,0 +1,52 @@
+{
+  "name": "easy-auth-vue",
+  "description": "Vue自定义指令v-auth",
+  "version": "0.0.1",
+  "private": false,
+  "type": "module",
+  "author": "zxz <953001542@qq.com> (https://zxz.cool)",
+  "license": "MIT",
+  "homepage": "https://github.com/xiaosuom/easy-auth-vue",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaosuom/easy-auth-vue"
+  },
+  "keywords": [
+    "auth",
+    "vue",
+    "v-auth",
+    "role"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "dist/easy-auth-vue.umd.js",
+  "module": "dist/easy-auth-vue.es.js",
+  "exports": {
+    "./lib/style.css": "./dist/style.css",
+    ".": {
+      "import": "./dist/easy-auth-vue.es.js",
+      "require": "./dist/easy-auth-vue.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build --force"
+  },
+  "dependencies": {
+    "vue": "^3.4.29"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^20.14.5",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "@vue/tsconfig": "^0.5.1",
+    "npm-run-all2": "^6.2.0",
+    "typescript": "~5.4.0",
+    "vite": "^5.3.1",
+    "vue-tsc": "^2.0.21"
+  }
+}
