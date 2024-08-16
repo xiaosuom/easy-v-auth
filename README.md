@@ -16,7 +16,7 @@ Vue 3 自定义指令 `v-auth`，实现按钮级权限控制。
 
 在 `main.ts` 中注册指令，并传入用户权限信息。
 下面例子展示将用户信息存在 Pinia 的情况。
-但不管用户信息存在哪里，都可以通过 `getRoles` 和 `getPermissions` 以函数的形式传入。
+但不管用户信息存在哪里，都可以通过 `getRoles` 和 `getPermissions` 以函数的形式传入用户的角色组和权限组。
 
 ```js
 // main.ts
@@ -53,7 +53,7 @@ app.use(auth).mount('#app');
 ```vue
 <template>
 	<h1>测试</h1>
-	<button v-auth="['staff']">员工可用</button>
+	<button v-auth="['staff', 'user']">员工、用户可用</button>
 	<button v-auth="['admin']">管理员可用</button>
 	<button v-auth:permission="['user::read']">有读取权限</button>
 	<button v-auth:permission="['user::delete']">有删除权限</button>
@@ -76,4 +76,4 @@ onMounted(() => {
 </script>
 ```
 
-在上面的例子中，在获得用户权限之前，所有按钮都不可见；在获得之后，【员工可用】和【有读取权限】，其他按钮被移除。
+在上面的例子中，在获得用户权限之前，所有按钮都不可见；在获得之后，【员工、用户可用】和【有读取权限】显示，其他按钮被移除。

@@ -1,7 +1,7 @@
 <template>
 	<h1>测试</h1>
-	<button v-auth="['staff']">员工可用</button>
-	<button v-auth="['admin']">管理员可用</button>
+	<button v-auth="['staff', 'user']">员工、用户可用</button>
+	<button v-auth="'admin'">管理员可用</button>
 	<button v-auth:permission="['user::read']">有读取权限</button>
 	<button v-auth:permission="['user::delete']">有删除权限</button>
 </template>
